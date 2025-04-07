@@ -29,7 +29,7 @@ version_dependent_macros = [
 ]
 
 extra_cuda_flags = [
-    '-std=c++14',
+    '-std=c++17',
     '-maxrregcount=50',
     '-U__CUDA_NO_HALF_OPERATORS__',
     '-U__CUDA_NO_HALF_CONVERSIONS__',
@@ -91,7 +91,7 @@ if bare_metal_major != -1:
             )
         ],
         extra_compile_args={
-            'cxx': ['-O3'] + version_dependent_macros,
+            'cxx': ['-O3','-std=c++17'] + version_dependent_macros,
             'nvcc': (
                 ['-O3', '--use_fast_math'] +
                 version_dependent_macros +
